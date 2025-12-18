@@ -71,10 +71,6 @@ DAILY_CONNECTION_LIMIT=10
 - **HEADLESS** – Run browser in headless mode (`true` or `false`)
 - **DAILY_CONNECTION_LIMIT** – Maximum connection requests per day
 
-> ⚠️ Do not commit the `.env` file to GitHub.
-
----
-
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Install dependencies
@@ -98,5 +94,3 @@ go run cmd/main.go
 - Clear separation of responsibilities
 - Safety limits and delays to simulate real usage
 - Persistent storage to track daily limits
-
----
