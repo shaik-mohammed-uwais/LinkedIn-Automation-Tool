@@ -40,7 +40,7 @@ func main() {
 	// 4. Browser (FIX: Disable Leakless)
 	l := launcher.New().
 		Headless(cfg.Headless).
-		Leakless(false) // 🔥 IMPORTANT FIX FOR WINDOWS
+		Leakless(false)
 
 	browserURL, err := l.Launch()
 	if err != nil {
@@ -55,12 +55,12 @@ func main() {
 
 	page := browser.MustPage()
 
-	// 🔑 Load cookies BEFORE login
+	//  Load cookies BEFORE login
 	if err := cookieStore.LoadCookies(page); err != nil {
 		log.Warn("Failed to load cookies: " + err.Error())
 	}
 
-	// 🔍 Check if already logged in
+	// Check if already logged in
 	if auth.IsLoggedIn(page) {
 		log.Info("Existing session detected, skipping login")
 	} else {
@@ -69,7 +69,7 @@ func main() {
 			return
 		}
 
-		// 💾 Save cookies AFTER successful login
+		// Save cookies AFTER successful login
 		if err := cookieStore.SaveCookies(page); err != nil {
 			log.Warn("Failed to save cookies: " + err.Error())
 		}
