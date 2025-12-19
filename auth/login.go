@@ -22,7 +22,7 @@ func Login(page *rod.Page, email, password string, log *logger.Logger) error {
 	page.MustWaitLoad()
 	page.MustWaitIdle()
 
-	// ✅ Session already restored via cookies
+	// Session already restored via cookies
 	if IsLoggedIn(page) {
 		log.Info("Already authenticated, skipping login")
 		return nil
@@ -51,7 +51,7 @@ func Login(page *rod.Page, email, password string, log *logger.Logger) error {
 	currentURL := page.MustInfo().URL
 	log.Debug("Post-login URL: " + currentURL)
 
-	// 🔒 Security detections
+	// Security detections
 	if strings.Contains(currentURL, "checkpoint") {
 		return errors.New("linkedin checkpoint triggered")
 	}
@@ -70,7 +70,7 @@ func Login(page *rod.Page, email, password string, log *logger.Logger) error {
 		return errors.New("captcha detected")
 	}
 
-	// ✅ FINAL verification
+	// FINAL verification
 	if !IsLoggedIn(page) {
 		return fmt.Errorf("login failed: user not authenticated")
 	}
