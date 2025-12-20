@@ -4,7 +4,7 @@
 
 Project walkthrough video (setup, configuration, execution, and features):
 
-👉 **Video Link:** [click-here-for explination-video](https://your-video-link-here)
+👉 **Video Link:** [click-here-for explination-video](https://drive.google.com/file/d/18JHSGVUH4iSViGTjZJBuvTeppln1ufzE/view?usp=sharing)
 
 ## 📌 Project Overview
 
